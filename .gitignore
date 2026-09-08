@@ -1,0 +1,87 @@
+# Root CMake build directory (market_maker + artifacts)
+/build/
+cmake-build-*/
+
+# demo/build: ignore CMake artifacts and compiled binaries; results/ is tracked
+demo/build/CMakeFiles/
+demo/build/CMakeCache.txt
+demo/build/cmake_install.cmake
+demo/build/Makefile
+demo/build/*.cmake
+demo/build/compile_commands.json
+demo/build/alpha_pnl_test_runner
+demo/build/alpha_runner
+demo/build/demo_runner
+demo/build/execution_layer_smoke_test
+# Training data and model checkpoints (large; regenerate with trainer.py)
+demo/build/artifacts/training_*/
+demo/build/artifacts/checkpoints/
+
+# Versioned experiment run outputs; manifests/summaries can be promoted into lab reports.
+demo/runs/
+lab/reports/artifacts/
+
+# Compiled object files and libraries
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+market_maker
+
+# IDE / 编辑器
+.vscode/
+.idea/
+*.user
+*.xcodeproj/
+*.xcworkspace/
+.DS_Store
+
+# Claude Code 会话目录（本地专用，不提交）
+.claude/
+CLAUDE.md
+AGENTS.md
+
+# Local reference docs (not for version control)
+structure.md
+
+# 编译命令数据库（由 CMake 生成，本地专用）
+compile_commands.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+
+# 笔记
+notes/
+
+# LaTeX presentation build auxiliaries; keep source .tex/.bib and final PDFs trackable.
+presentation/*.aux
+presentation/*.bbl
+presentation/*.bcf
+presentation/*.blg
+presentation/*.fdb_latexmk
+presentation/*.fls
+presentation/*.log
+presentation/*.nav
+presentation/*.out
+presentation/*.run.xml
+presentation/*.snm
+presentation/*.toc
+
+# data
+demo/data/
+
+# Notebook series: keep the .ipynb (they are committed with outputs so they read
+# on GitHub), drop checkpoints and regenerated side-outputs.
+notebooks/.ipynb_checkpoints/
+notebooks/.virtual_documents/
+notebooks/_output/
+# The bound print PDF: 7.4MB and regenerable with
+# scripts/notebooks_to_pdf.py -- drop this line if you want it tracked.
+notebooks/volatility_series.pdf
